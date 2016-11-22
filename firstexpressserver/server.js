@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
 
+var indexRouter = require("./routes/index")(app);
 
 app.set("port", process.env.PORT || 8080);
+app.set("views", __dirname + "/views");
+app.set("view engines", "ejs");
+app.engine("html", require("ejs").renderFile);
 
-app.get('/', function(req, res){
-    res.type("text/plain");
-    res.send("Hello Express!!");
-});
 
 app.use(function(req, res){
     res.type("text/plain");
