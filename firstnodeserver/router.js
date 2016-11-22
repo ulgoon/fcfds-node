@@ -1,30 +1,23 @@
 var fs = require('fs');
+var renderer = require("./renderer");
 
 
 function home(request, response){
     if(request.url === "/"){
-        fs.readFile("./layout/home.html", function(err, data){
-            response.write(data);
-            response.end();
-        });
+        return renderer(request, response, "home");
     }    
 }
 
 function about(request, response){
     if(request.url === "/about"){
-        fs.readFile("./layout/about.html", function(err, data){
-            response.write(data);
-            response.end();
-        });
+            
+        return renderer(request, response, "about");
     }
 }
 
 function facamp(request, response){
     if(request.url === "/facamp"){
-        fs.readFile("./layout/facamp.html", function(err, data){
-            response.write(data);
-            response.end();
-        });
+        return renderer(request, response, "facamp");
     }
 }
 
