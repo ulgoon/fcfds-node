@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 
 var indexRouter = require("./routes/index")(app);
+var aboutRouter = require("./routes/about")(app);
 
 app.set("port", process.env.PORT || 8080);
 app.set("views", __dirname + "/views");
