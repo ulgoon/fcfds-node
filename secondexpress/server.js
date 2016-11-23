@@ -4,7 +4,16 @@ var app = express();
 var indexRouter = require("./routes/index")(app);
 var aboutRouter = require("./routes/about")(app);
 
+
 app.set("port", process.env.PORT || 3030);
+
+// views for rendering
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.engine("html", require('ejs').renderFile);
+
+// /public for express static files
+app.use("/public", express.static(__dirname + "/public"));
 
 app.use(function(req, res){
     res.type("text/plain");
