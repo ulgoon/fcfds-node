@@ -21,4 +21,13 @@ module.exports = function(app){
         var u = users[n];
         res.json(u);
     });
+    
+    app.get('/users/:id', function(req, res){
+        if (users.length < req.params.id || req.params.id <= 0){
+            res.statusCode = 404;
+            return res.send("404 - Not Found, Choose 1 to 10");
+        }
+        var u = users[req.params.id - 1];
+        res.json(u);
+    });
 }
