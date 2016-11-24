@@ -191,3 +191,9 @@ socket.on("chat message", function(msg){
 	$("#messages").append($("<li>").text(msg));
 });
 ```
+
+---
+# Todo
+- socket.io 처음부터 다시
+- web scraping with node.js
+- gulp
