@@ -20,7 +20,7 @@
 - 일관성있는 문법과 API로 개발 가능
 
 ---
-### chat.html
+### chat.ejs
 ```
 <style>
 	* { margin: 0; padding: 0; box-sizing: border-box; }
