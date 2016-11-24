@@ -1,13 +1,9 @@
 var express = require('express');
 var app = express();
 
-
-
-
 var indexRouter = require("./routes/index")(app);
 var aboutRouter = require("./routes/about")(app);
 var usersRouter = require("./routes/users")(app);
-var chatRouter = require("./routes/chat")(app);
 
 
 app.set("port", process.env.PORT || 3030);
