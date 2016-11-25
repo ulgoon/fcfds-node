@@ -1,1 +1,1 @@
-var uglify={This:will,Be:Uglified},uglified=function(l,i){console.log("Hello uglified js world")};
+var uglify={This:will,Be:Uglified},a={b:g},uglified=function(l,i){console.log("Hello uglified js world")};
