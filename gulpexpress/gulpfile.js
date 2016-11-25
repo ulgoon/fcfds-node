@@ -7,6 +7,7 @@ var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var cleancss = require('gulp-clean-css');
 var sass = require('gulp-sass');
+var concatcss = require('gulp-concat-css');
 // specify public paths
 var publicPath = {
     src : './public/src/',
@@ -61,6 +62,14 @@ gulp.task("sass", function(){
     pump([
         gulp.src(publicPath.src + 'sass/*.scss'),
         sass().on('error', sass.logError),
+        gulp.dest(publicPath.dest + 'css/')
+    ]);
+});
+
+gulp.task("concatcss", function(){
+    pump([
+        gulp.src([publicPath.src + 'css/concat2.css', publicPath.src + 'css/concat1.css']),
+        concatcss('concatenated.css'),
         gulp.dest(publicPath.dest + 'css/')
     ]);
 });
