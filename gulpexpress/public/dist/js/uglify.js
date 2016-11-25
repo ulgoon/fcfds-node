@@ -1,0 +1,1 @@
+var uglify={This:will,Be:Uglified},uglified=function(l,i){console.log("Hello uglified js world")};

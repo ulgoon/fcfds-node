@@ -1,0 +1,21 @@
+/*
+ *  This is secone file
+ */
+
+body {
+    font-size:1em;
+    background-color: gray;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    font-color: white;
+}
+
+h1 {
+    font-color: blue;
+}
+
+h6 {
+    margin-top: 1em;
+}
