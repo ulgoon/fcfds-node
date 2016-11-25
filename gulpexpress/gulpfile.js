@@ -5,6 +5,7 @@ var pump = require('pump');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
+var cleancss = require('gulp-clean-css');
 // specify public paths
 var publicPath = {
     src : './public/src/',
@@ -42,6 +43,15 @@ gulp.task("imagemin", function(){
         gulp.src([publicPath.src + 'img/*.jpg', publicPath.src + 'img/*.png']),
         imagemin(),
         gulp.dest(publicPath.dest + 'img/')
+    ]);
+});
+
+//css minify
+gulp.task("cleancss", function(){
+    pump([
+        gulp.src(publicPath.src + 'css/minify.css'),
+        cleancss(),
+        gulp.dest(publicPath.dest + 'css/')
     ]);
 });
 
