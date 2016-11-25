@@ -136,8 +136,8 @@ with [CSS selector](http://www.w3schools.com/cssref/css_selectors.asp), [jquery 
 var $ = cheerio.load(body);
 var movieInfo = $("table#Top-Box-Office.movie_list");
 console.log(movieInfo); movieInfo.each(function(){
-	var movieName = $(this).find("td.left_col").text();
-	var meterScore = $(this).find("td.middle_col").text();
+	var movieName = $(this).find("td.middle_col").text();
+	var meterScore = $(this).find("td.left_col").text();
 	console.log(movieName);
 	console.log(meterScore);
 });
@@ -155,7 +155,7 @@ movieInfo.each(function(){
 ```
 
 ---
-### gulp
+# gulp
 
 
 ---
@@ -229,7 +229,7 @@ $ npm install gulp-uglify --save-dev
 var uglify = require("gulp-uglify");
 
 gulp.task("uglify", function(){
-	return gulp.src("public/src/*.js").pipe(uglify()).pipe(gulp.dest("/public/dist/"));
+	return gulp.src("public/src/*.js").pipe(uglify()).pipe(gulp.dest("/public/dest/"));
 });
 
 gulp.task("default", ["uglify"]);
@@ -249,5 +249,4 @@ gulp.task("default", ["uglify", "watch"]);
 ---
 ### 이외에도..
 ![](https://github.com/osscafe/gulp-cheatsheet/raw/master/images/en-js-p1.png)
-
 
